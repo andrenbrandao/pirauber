@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{% block title %}PiraUber{% endblock title %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="André Nogueira Brandão">
+
+  <link rel="icon" href="{% static 'img/brand/favicon.ico' %}">
+
+  {% block css %}
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="{% static 'argon/vendor/nucleo/css/nucleo.css' %}" rel="stylesheet">
+  <link href=" {% static 'argon/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+
+  <!-- Theme CSS -->
+  <link type="text/css" href="{% static 'argon/css/argon.min.css' %}" rel="stylesheet">
+
+  <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+
+  {% endblock %}
+
+</head>
+
+<body>
+  {% include '_navbar.html' %}
+
+  <main>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}<button type="button"
+        class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% block content %}
+    {% endblock content %}
+  </main>
+
+  {% block modal %}{% endblock modal %}
+
+  {% block footer %}
+  {% endblock footer %}
+
+  <!-- Le javascript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  {% block javascript %}
+
+  <script src="{% static 'argon/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'argon/vendor/popper/popper.min.js' %}"></script>
+  <script src="{% static 'argon/vendor/bootstrap/bootstrap.min.js' %}"></script>
+  <script src="{% static 'argon/vendor/headroom/headroom.min.js' %}"></script>
+  <!-- Theme JS -->
+  <script src="{% static 'argon/js/argon.min.js' %}"></script>
+
+  {% endblock javascript %}
+</body>
+
+</html>

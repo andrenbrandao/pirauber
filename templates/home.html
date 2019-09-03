@@ -1,0 +1,79 @@
+{% extends "_base.html" %}
+{% load static %}
+{% load i18n %}
+
+
+{% block content %}
+<div class="position-relative">
+    <!-- shape Hero -->
+    <section class="section section-lg section-shaped pb-250">
+        <div class="shape shape-style-1 shape-default">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="container shape-container d-flex align-items-center py-lg">
+            <div class="col px-0">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <img src="{% static 'img/brand/white.png' %}" style="width: 250px;" class="img-fluid">
+                        <p class="lead text-white">
+                            {% trans 'The carpooling application for the Piracanga Ecovillage. Free and Open Source.' %}
+                        </p>
+                        <div class="btn-wrapper mt-5">
+                            <a href="#" class="btn btn-lg btn-primary btn-icon mb-3 mb-sm-0">
+                                <span class="btn-inner--icon"><i class="fa fa-car"></i></span>
+                                <span class="btn-inner--text">{% trans 'See current rides!' %}</span>
+                            </a>
+                            <a href="#" class="btn btn-lg btn-white btn-icon mb-3 mb-sm-0">
+                                <span class="btn-inner--icon"><i class="fa fa-user-plus"></i></span>
+                                <span class="btn-inner--text">{% trans 'Sign up now' %}</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SVG separator -->
+        <div class="separator separator-bottom separator-skew">
+            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+                xmlns="http://www.w3.org/2000/svg">
+                <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+            </svg>
+        </div>
+    </section>
+    <!-- 1st Hero Variation -->
+</div>
+{% endblock content %}
+
+{% block footer %}
+<footer class="footer has-cards">
+    <div class="container">
+        <hr>
+        <div class="row align-items-center justify-content-md-between">
+            <div class="col-md-6">
+                <div class="copyright">
+                    © 2019 PiraUber.
+                </div>
+            </div>
+            <div class="col-md-6">
+                <ul class="nav nav-footer justify-content-end">
+                    <li class="nav-item">
+                        <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Argon Theme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://github.com/creativetimofficial/argon-design-system/blob/master/LICENSE.md"
+                            class="nav-link" target="_blank">MIT License</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock footer %}
