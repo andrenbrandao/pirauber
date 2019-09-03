@@ -14,6 +14,7 @@ psycopg2 = "*"
 django-storages = "*"
 gunicorn = "*"
 django-heroku = "*"
+django-environ = "*"
 
 [requires]
 python_version = "3.7"
