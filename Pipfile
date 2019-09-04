@@ -15,6 +15,7 @@ django-storages = "*"
 gunicorn = "*"
 django-heroku = "*"
 django-environ = "*"
+boto3 = "*"
 
 [requires]
 python_version = "3.7"
