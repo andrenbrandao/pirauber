@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     # 3rd party
     'storages',
+    'crispy_forms',
 
     # Local
     'users.apps.UsersConfig',
@@ -165,3 +166,6 @@ if not DEBUG:
 
 # Custom User
 AUTH_USER_MODEL = 'users.CustomUser'
+
+# Crispy Forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
