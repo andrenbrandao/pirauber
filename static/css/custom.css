@@ -3,3 +3,7 @@
 .section-shaped .shape-style-1.shape-default {
     background: linear-gradient(150deg, #13214d 15%, #0e7272 70%, #555abf 94%);
 }
+
+.invalid-feedback {
+    display: block;
+}

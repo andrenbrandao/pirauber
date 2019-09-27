@@ -30,16 +30,24 @@
                     </div>
                 </div>
                 <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+                    {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a href="{% url 'account_logout' %}" class="nav-link">
+                            {% trans 'Log out' %}
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a href="{% url 'account_login' %}" class="nav-link">
                             {% trans 'Log in' %}
                         </a>
                     </li>
                     <li class="nav-item d-none d-lg-block ml-lg-4">
-                        <a href="#" class="btn btn-neutral btn-icon">
+                        <a href="{% url 'account_signup' %}" class="btn btn-neutral btn-icon">
                             {% trans 'Sign up' %}
                         </a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

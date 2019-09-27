@@ -17,6 +17,7 @@ django-heroku = "*"
 django-environ = "*"
 boto3 = "*"
 django-crispy-forms = "*"
+django-allauth = "*"
 
 [requires]
 python_version = "3.7"
