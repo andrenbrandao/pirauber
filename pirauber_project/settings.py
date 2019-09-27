@@ -182,6 +182,7 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 
 SITE_ID = 1
 
@@ -192,4 +193,7 @@ AUTHENTICATION_BACKENDS = (
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-ACCOUNT_FORMS = {'login': 'pirauber_project.forms.CustomLoginForm'}
+ACCOUNT_FORMS = {
+    'login': 'pirauber_project.forms.CustomLoginForm',
+    'signup': 'pirauber_project.forms.CustomSignupForm',
+}
