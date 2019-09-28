@@ -8,7 +8,6 @@ from crispy_forms.layout import Layout, Submit, Row, Column, Div, ButtonHolder, 
 from crispy_forms.bootstrap import PrependedText
 
 from phonenumber_field.formfields import PhoneNumberField
-from phonenumber_field.widgets import PhoneNumberPrefixWidget, PhoneNumberInternationalFallbackWidget
 from intl_tel_input.widgets import IntlTelInputWidget
 
 

@@ -32,9 +32,11 @@
                 <ul class="navbar-nav align-items-lg-center ml-lg-auto">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a href="{% url 'account_logout' %}" class="nav-link">
-                            {% trans 'Log out' %}
-                        </a>
+                        <form action="{% url 'account_logout' %}" method='post'>
+                            {% csrf_token %}
+                            <button type="submit" class='btn btn-link nav-link'
+                                style='text-transform: initial;'>{% trans 'Log out' %}</button>
+                        </form>
                     </li>
                     {% else %}
                     <li class="nav-item">
