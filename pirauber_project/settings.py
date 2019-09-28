@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     # Local
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
+    'rides.apps.RidesConfig',
 ]
 
 MIDDLEWARE = [
