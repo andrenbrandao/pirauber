@@ -7,3 +7,7 @@
 .invalid-feedback {
     display: block;
 }
+
+.intl-tel-input {
+    display: block !important;
+}

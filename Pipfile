@@ -18,6 +18,9 @@ django-environ = "*"
 boto3 = "*"
 django-crispy-forms = "*"
 django-allauth = "*"
+django-phonenumber-field = "*"
+phonenumberslite = "*"
+django-intl-tel-input = "*"
 
 [requires]
 python_version = "3.7"

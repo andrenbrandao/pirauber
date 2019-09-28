@@ -10,6 +10,9 @@
 
 {% block content %}
 
+{% comment %} Load intl-js css {% endcomment %}
+{{ form.media.css }}
+
 <section class="section section-shaped section-lg">
     <div class="shape shape-style-1 bg-gradient-default">
         <span></span>
@@ -42,3 +45,8 @@
 </section>
 
 {% endblock content %}
+
+{% block javascript %}
+{{ block.super }}
+{{ form.media.js }}
+{% endblock %}

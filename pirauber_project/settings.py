@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'allauth',
     'allauth.account',
+    'phonenumber_field',
+    'intl_tel_input',
 
     # Local
     'users.apps.UsersConfig',
@@ -197,3 +199,6 @@ ACCOUNT_FORMS = {
     'login': 'pirauber_project.forms.CustomLoginForm',
     'signup': 'pirauber_project.forms.CustomSignupForm',
 }
+
+# phonenumber_field config
+PHONENUMBER_DEFAULT_REGION = 'BR'
