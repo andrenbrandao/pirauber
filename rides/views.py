@@ -9,3 +9,7 @@ class RideListView(tables.SingleTableView):
     table_class = RideTable
     context_object_name = 'ride_list'
     template_name = "rides/ride_list.html"
+    ordering = ('date')
+    table_pagination = {
+        "per_page": 10
+    }
