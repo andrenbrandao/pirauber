@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'phonenumber_field',
     'intl_tel_input',
+    'django_tables2',
 
     # Local
     'users.apps.UsersConfig',

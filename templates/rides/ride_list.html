@@ -1,0 +1,50 @@
+{% extends '_base.html' %}
+{% load i18n %}
+{% load django_tables2 %}
+
+{% block title %}
+{% trans "Rides" %}
+{% endblock title %}
+
+{% block content %}
+
+
+<section class="section section-shaped section-lg">
+    <div class="shape shape-style-1 bg-gradient-default">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="container pt-lg-md">
+        <div class="card card-profile shadow">
+            <div class="text-center mt-5">
+                <h3>{% trans "PiraUber Rides" %}</h3>
+                <div class="h6 font-weight-300"><i
+                        class="ni location_pin mr-2"></i>{% trans "Check the available rides here!" %}</div>
+            </div>
+
+            {% if ride_list %}
+            <div class="py-5 px-5 table-responsive">
+                {% render_table table %}
+            </div>
+            {% else %}
+            <div class="mt-5 py-5 border-top text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <p>{% trans 'There are no rides available right now. If you are a driver and want to offer one, create one below.' %}
+                        </p>
+                        <a href="#">{% trans 'Add a ride' %}</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
