@@ -28,6 +28,10 @@
                         class="ni location_pin mr-2"></i>{% trans "Check the available rides here!" %}</div>
             </div>
 
+            <div class='mt-5 px-5'>
+                <a href="{% url 'ride_new' %}" class='btn btn-primary'>{% trans 'Create Ride' %}</a>
+            </div>
+
             {% if ride_list %}
             <div class="py-5 px-5 table-responsive">
                 {% render_table table %}

@@ -11,3 +11,9 @@
 .intl-tel-input {
     display: block !important;
 }
+
+.optionalField {
+    margin-left: 5px;
+    color: #999;
+    -webkit-font-smoothing: antialiased;
+}
