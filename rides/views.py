@@ -1,5 +1,5 @@
 import datetime
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 
@@ -10,15 +10,12 @@ from .tables import RideTable
 from .forms import RideForm
 
 
-class RideListView(tables.SingleTableView):
+class RideListView(ListView):
     queryset = Ride.objects.filter(
         date__gte=datetime.date.today()).order_by('date')
-    table_class = RideTable
     context_object_name = 'ride_list'
     template_name = "rides/ride_list.html"
-    table_pagination = {
-        "per_page": 10
-    }
+    paginate_by = 10
 
 
 class RideCreateView(LoginRequiredMixin, CreateView):

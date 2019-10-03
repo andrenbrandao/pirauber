@@ -17,3 +17,40 @@
   color: #999;
   -webkit-font-smoothing: antialiased;
 }
+
+.route-title {
+  display: flex;
+  align-items: center;
+}
+
+.route-title > i {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.ride-list-card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.itinerary-svg:before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60px' height='6px' viewBox='20 0 260 6'%3E%3Cline x1='40' x2='260' y1='0' y2='0' stroke='%235e72e4' stroke-width='20' stroke-linecap='round' stroke-dasharray='1, 30'%3E%3C/line%3E%3C/svg%3E");
+}
+
+.itinerary {
+  display: flex;
+}
+
+@media (max-width: 767.98px) {
+  .itinerary {
+    display: block;
+  }
+
+  .ride-list-card-header {
+    display: block;
+  }
+
+  .itinerary-svg:before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40px' height='50px' viewBox='20 180 220 5'%3E%3Cline x1='40' x2='40' y1='0' y2='300' stroke='%235e72e4' stroke-width='20' stroke-linecap='round' stroke-dasharray='1, 30'%3E%3C/line%3E%3C/svg%3E");
+  }
+}
