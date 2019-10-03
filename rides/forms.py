@@ -29,6 +29,7 @@ class RideForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_method = 'post'
-        self.helper.add_input(Submit('submit', 'Save Ride'))
+        self.helper.add_input(
+            Submit('submit', 'Save Ride', css_class='btn-block'))
         for visible in self.visible_fields():
             visible.field.widget.attrs['class'] = 'input-group-alternative'

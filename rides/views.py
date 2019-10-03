@@ -1,6 +1,6 @@
 import datetime
-from django.views.generic import CreateView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import CreateView, UpdateView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 
 import django_tables2 as tables
@@ -30,3 +30,14 @@ class RideCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.driver = self.request.user
         return super().form_valid(form)
+
+
+class RideUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Ride
+    form_class = RideForm
+    template_name = "rides/ride_edit.html"
+    success_url = reverse_lazy('ride_list')
+
+    def test_func(self):
+        obj = self.get_object()
+        return obj.driver == self.request.user
