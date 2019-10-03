@@ -28,11 +28,11 @@
                         class="ni location_pin mr-2"></i>{% trans "Check the available rides here!" %}</div>
             </div>
 
+            {% if ride_list %}
             <div class='mt-5 px-5'>
                 <a href="{% url 'ride_new' %}" class='btn btn-primary'>{% trans 'Create Ride' %}</a>
             </div>
 
-            {% if ride_list %}
             <div class="py-5 px-5 table-responsive">
                 {% render_table table %}
             </div>
@@ -42,7 +42,7 @@
                     <div class="col-lg-9">
                         <p>{% trans 'There are no rides available right now. If you are a driver and want to offer one, create one below.' %}
                         </p>
-                        <a href="#">{% trans 'Add a ride' %}</a>
+                        <a href="{% url 'ride_new' %}" class='btn btn-primary'>{% trans 'Create Ride' %}</a>
                     </div>
                 </div>
             </div>
