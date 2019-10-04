@@ -20,95 +20,101 @@
         <span></span>
     </div>
     <div class="container pt-lg-md">
-        <div class="card card-profile shadow">
-            <div class="text-center mt-5">
-                <h3>{% trans "PiraUber Rides" %}</h3>
-                <div class="h6 font-weight-300"><i
-                        class="ni location_pin mr-2"></i>{% trans "Check the available rides here!" %}</div>
-            </div>
+        <div class='row justify-content-center'>
+            <div class='col-lg-8'>
+                <div class="card card-profile shadow">
+                    <div class="text-center mt-5">
+                        <h3>{% trans "PiraUber Rides" %}</h3>
+                        <div class="h6 font-weight-300"><i
+                                class="ni location_pin mr-2"></i>{% trans "Check the available rides here!" %}</div>
+                    </div>
 
-            {% if ride_list %}
-            <div class='mt-2 px-5 text-center'>
-                <a href="{% url 'ride_new' %}" class='btn btn-primary'>{% trans 'Create Ride' %}</a>
-            </div>
+                    {% if ride_list %}
+                    <div class='mt-2 px-5 text-center'>
+                        <a href="{% url 'ride_new' %}" class='btn btn-primary'>{% trans 'Create Ride' %}</a>
+                    </div>
 
-            <div class="mt-5 py-5 px-5 border-top infinite-container">
-                {% for ride in ride_list %}
-                <div class="card card-lift--hover shadow border-0 my-5 infinite-item">
-                    <div class="card-body py-5">
-                        <div class='ride-list-card-header mb-5'>
-                            <div>
-                                <h3 class="heading-title text-warning">{{ ride.date }}</h3>
-                                <p class="badge badge-pill badge-warning">
-                                    {% if ride.time %}{{ ride.time }}{% else %}{% trans "No Time Defined" %}{% endif %}
-                                </p>
-                            </div>
+                    <div class="mt-5 py-5 px-5 border-top infinite-container">
+                        {% for ride in ride_list %}
+                        <div class="card card-lift--hover shadow border-0 my-5 infinite-item">
+                            <div class="card-body py-5">
+                                <div class='ride-list-card-header mb-5'>
+                                    <div>
+                                        <h3 class="heading-title text-warning">{{ ride.date }}</h3>
+                                        <p class="badge badge-pill badge-warning">
+                                            {% if ride.time %}{{ ride.time }}{% else %}{% trans "No Time Defined" %}{% endif %}
+                                        </p>
+                                    </div>
 
-                            <div class='right-side-info'>
-                                <h5 class='d-flex align-items-center text-right text-primary'>
-                                    <i class="ni ni-user-run mr-2"></i>
-                                    {% blocktrans count amount=ride.seats %}
-                                    {{ amount }} seat
-                                    {% plural %}
-                                    {{ amount }} seats
-                                    {% endblocktrans %}
-                                </h5>
+                                    <div class='right-side-info'>
+                                        <h5 class='d-flex align-items-center text-right text-primary'>
+                                            <i class="ni ni-user-run mr-2"></i>
+                                            {% blocktrans count amount=ride.seats %}
+                                            {{ amount }} seat
+                                            {% plural %}
+                                            {{ amount }} seats
+                                            {% endblocktrans %}
+                                        </h5>
 
-                                {% if ride.price %}
-                                <h5 class='text-primary'>R$ {{ ride.price }}</h5>
+                                        {% if ride.price %}
+                                        <h5 class='text-primary'>R$ {{ ride.price }}</h5>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class='itinerary'>
+                                    <h6 class="text-primary text-uppercase route-title">
+                                        <i class="fa fa-map-marker mr-2"></i>{{ ride.origin }}
+                                    </h6>
+                                    <span class='itinerary-svg mx-1'></span>
+                                    <h6 class="text-primary text-uppercase route-title"><i
+                                            class="fa fa-map-marker mr-2"></i>{{ride.destination}}</h6>
+                                </div>
+                                {% comment %} <h6 class="text-primary text-uppercase route-title">
+                                    <span class='origin'><i class="fa fa-map-marker mr-2"></i>{{ ride.origin }}</span>
+                                    <span class='itinerary-svg mx-1'></span>
+                                    <span class='destination'><i
+                                            class="fa fa-map-marker mr-2"></i>{{ride.destination}}</span>
+                                </h6> {% endcomment %}
+                                <p class="description mt-3">{{ ride.description }}</p>
+                                <div>
+                                    <span class="badge badge-pill badge-primary">{{ ride.driver.name }}</span>
+                                    <span class="badge badge-pill badge-primary">{{ ride.driver.phone }}</span>
+                                </div>
+                                {% if request.user == ride.driver %}
+                                <a href="{% url 'ride_edit' ride.pk %}"
+                                    class="btn btn-outline-info mt-4">{% trans "Edit" %}</a>
+                                <a href="#" class="btn btn-outline-danger mt-4">{% trans "Delete" %}</a>
                                 {% endif %}
                             </div>
                         </div>
-                        <div class='itinerary'>
-                            <h6 class="text-primary text-uppercase route-title">
-                                <i class="fa fa-map-marker mr-2"></i>{{ ride.origin }}
-                            </h6>
-                            <span class='itinerary-svg mx-1'></span>
-                            <h6 class="text-primary text-uppercase route-title"><i
-                                    class="fa fa-map-marker mr-2"></i>{{ride.destination}}</h6>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="mt-5 py-5 border-top text-center">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-9">
+                                <p>{% trans 'There are no rides available right now. If you are a driver and want to offer one, create one below.' %}
+                                </p>
+                                <a href="{% url 'ride_new' %}" class='btn btn-primary'>{% trans 'Create Ride' %}</a>
+                            </div>
                         </div>
-                        {% comment %} <h6 class="text-primary text-uppercase route-title">
-                            <span class='origin'><i class="fa fa-map-marker mr-2"></i>{{ ride.origin }}</span>
-                            <span class='itinerary-svg mx-1'></span>
-                            <span class='destination'><i class="fa fa-map-marker mr-2"></i>{{ride.destination}}</span>
-                        </h6> {% endcomment %}
-                        <p class="description mt-3">{{ ride.description }}</p>
-                        <div>
-                            <span class="badge badge-pill badge-primary">{{ ride.driver.name }}</span>
-                            <span class="badge badge-pill badge-primary">{{ ride.driver.phone }}</span>
+                    </div>
+                    {% endif %}
+
+                    {% if page_obj.has_next %}
+                    <div class='pb-5 px-5 text-center'>
+
+                        <div class="d-flex justify-content-center">
+                            <div class="spinner-border text-primary loading" role="status" style='display: none'>
+                                <span class="sr-only">Loading...</span>
+                            </div>
                         </div>
-                        {% if request.user == ride.driver %}
-                        <a href="{% url 'ride_edit' ride.pk %}" class="btn btn-outline-info mt-4">{% trans "Edit" %}</a>
-                        <a href="#" class="btn btn-outline-danger mt-4">{% trans "Delete" %}</a>
-                        {% endif %}
+                        <a class="infinite-more-link btn btn-primary" style='display: none'
+                            href="?page={{ page_obj.next_page_number }}">{% trans "More" %}</a>
                     </div>
-                </div>
-                {% endfor %}
-            </div>
-            {% else %}
-            <div class="mt-5 py-5 border-top text-center">
-                <div class="row justify-content-center">
-                    <div class="col-lg-9">
-                        <p>{% trans 'There are no rides available right now. If you are a driver and want to offer one, create one below.' %}
-                        </p>
-                        <a href="{% url 'ride_new' %}" class='btn btn-primary'>{% trans 'Create Ride' %}</a>
-                    </div>
+                    {% endif %}
                 </div>
             </div>
-            {% endif %}
-
-            {% if page_obj.has_next %}
-            <div class='pb-5 px-5 text-center'>
-
-                <div class="d-flex justify-content-center">
-                    <div class="spinner-border text-primary loading" role="status" style='display: none'>
-                        <span class="sr-only">Loading...</span>
-                    </div>
-                </div>
-                <a class="infinite-more-link btn btn-primary" style='display: none'
-                    href="?page={{ page_obj.next_page_number }}">{% trans "More" %}</a>
-            </div>
-            {% endif %}
         </div>
     </div>
 </section>
