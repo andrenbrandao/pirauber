@@ -32,9 +32,9 @@
                 <a href="{% url 'ride_new' %}" class='btn btn-primary'>{% trans 'Create Ride' %}</a>
             </div>
 
-            <div class="mt-5 py-5 px-5 border-top">
+            <div class="mt-5 py-5 px-5 border-top infinite-container">
                 {% for ride in ride_list %}
-                <div class="card card-lift--hover shadow border-0 my-5">
+                <div class="card card-lift--hover shadow border-0 my-5 infinite-item">
                     <div class="card-body py-5">
                         <div class='ride-list-card-header mb-5'>
                             <div>
@@ -96,8 +96,36 @@
                 </div>
             </div>
             {% endif %}
+
+            {% if page_obj.has_next %}
+            <div class='pb-5 px-5 text-center'>
+
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border text-primary loading" role="status" style='display: none'>
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+                <a class="infinite-more-link btn btn-primary" style='display: none'
+                    href="?page={{ page_obj.next_page_number }}">{% trans "More" %}</a>
+            </div>
+            {% endif %}
         </div>
     </div>
 </section>
 
 {% endblock content %}
+
+{% block javascript %}
+{{ block.super }}
+<script>
+    var infinite = new Waypoint.Infinite({
+        element: $('.infinite-container')[0],
+        onBeforePageLoad: function () {
+            $('.loading').show();
+        },
+        onAfterPageLoad: function ($items) {
+            $('.loading').hide();
+        }
+    });
+</script>
+{% endblock javascript %}

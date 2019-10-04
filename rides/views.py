@@ -15,7 +15,7 @@ class RideListView(ListView):
         date__gte=datetime.date.today()).order_by('date')
     context_object_name = 'ride_list'
     template_name = "rides/ride_list.html"
-    paginate_by = 10
+    paginate_by = 5
 
 
 class RideCreateView(LoginRequiredMixin, CreateView):
