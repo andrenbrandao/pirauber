@@ -69,21 +69,24 @@
                                     <h6 class="text-primary text-uppercase route-title"><i
                                             class="fa fa-map-marker mr-2"></i>{{ride.destination}}</h6>
                                 </div>
-                                {% comment %} <h6 class="text-primary text-uppercase route-title">
-                                    <span class='origin'><i class="fa fa-map-marker mr-2"></i>{{ ride.origin }}</span>
-                                    <span class='itinerary-svg mx-1'></span>
-                                    <span class='destination'><i
-                                            class="fa fa-map-marker mr-2"></i>{{ride.destination}}</span>
-                                </h6> {% endcomment %}
                                 <p class="description mt-3">{{ ride.description }}</p>
                                 <div>
                                     <span class="badge badge-pill badge-primary">{{ ride.driver.name }}</span>
                                     <span class="badge badge-pill badge-primary">{{ ride.driver.phone }}</span>
                                 </div>
                                 {% if request.user == ride.driver %}
-                                <a href="{% url 'ride_edit' ride.pk %}"
-                                    class="btn btn-outline-info mt-4">{% trans "Edit" %}</a>
-                                <a href="#" class="btn btn-outline-danger mt-4">{% trans "Delete" %}</a>
+                                <div class='actions'>
+                                    <a href="{% url 'ride_edit' ride.pk %}"
+                                        class="btn btn-outline-info mt-4">{% trans "Edit" %}</a>
+
+                                    <form action="{% url 'ride_delete' ride.pk %}" method='post'
+                                        style='display: inline-block'>
+                                        {% csrf_token %}
+                                        <input type='button' data-toggle="modal"
+                                            class="btn btn-outline-danger mt-4 js-delete-ride"
+                                            data-target="#deleteRideModal" value="{% trans "Delete" %}"></input>
+                                    </form>
+                                </div>
                                 {% endif %}
                             </div>
                         </div>
@@ -106,7 +109,7 @@
 
                         <div class="d-flex justify-content-center">
                             <div class="spinner-border text-primary loading" role="status" style='display: none'>
-                                <span class="sr-only">Loading...</span>
+                                <span class="sr-only">{% trans "Loading..." %}</span>
                             </div>
                         </div>
                         <a class="infinite-more-link btn btn-primary" style='display: none'
@@ -118,6 +121,28 @@
         </div>
     </div>
 </section>
+
+<div class="modal fade" id="deleteRideModal" tabindex="-1" role="dialog" aria-labelledby="deleteRideModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteRideModalLabel">{% trans "Delete Ride"%}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% trans "Are you sure you want to delete this ride?"%}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
+                <button type="button" class="btn btn-danger" id="delete-confirm">{% trans "Delete" %}</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
 
 {% endblock content %}
 
@@ -132,6 +157,17 @@
         onAfterPageLoad: function ($items) {
             $('.loading').hide();
         }
+    });
+
+    var formSubmit = ''
+
+    $('#deleteRideModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        formSubmit = button.closest('form')
+    });
+
+    $('#delete-confirm').on('click', function () {
+        formSubmit.submit();
     });
 </script>
 {% endblock javascript %}
