@@ -1,0 +1,259 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-08 13:54-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: pages/apps.py:7
+msgid "Pages"
+msgstr "Páginas"
+
+#: pirauber_project/forms.py:25 templates/account/signup.html:41
+msgid "Sign in"
+msgstr "Entrar"
+
+#: pirauber_project/forms.py:36 pirauber_project/forms.py:37 users/forms.py:34
+msgid "Full Name"
+msgstr "Nome Completo"
+
+#: pirauber_project/forms.py:38 users/models.py:10
+msgid "Phone"
+msgstr "Telefone"
+
+#: pirauber_project/forms.py:55 templates/_navbar.html:52
+msgid "Sign up"
+msgstr "Cadastrar"
+
+#: rides/apps.py:7 templates/rides/ride_list.html:5
+msgid "Rides"
+msgstr "Caronas"
+
+#: rides/forms.py:12
+msgid "Date"
+msgstr "Data"
+
+#: rides/forms.py:19
+msgid "Time"
+msgstr "Hora"
+
+#: rides/forms.py:37
+msgid "Save Ride"
+msgstr "Salvar Carona"
+
+#: rides/models.py:8
+msgid "created"
+msgstr "criado"
+
+#: rides/models.py:10
+msgid "modified"
+msgstr "modificado"
+
+#: rides/models.py:12
+msgid "Driver"
+msgstr "Motorista"
+
+#: rides/models.py:13
+msgid "date"
+msgstr "data"
+
+#: rides/models.py:14
+msgid "time"
+msgstr "hora"
+
+#: rides/models.py:16
+msgid "origin"
+msgstr "origem"
+
+#: rides/models.py:17
+msgid "destination"
+msgstr "destino"
+
+#: rides/models.py:19
+msgid "description"
+msgstr "descrição"
+
+#: rides/models.py:20
+msgid "seats"
+msgstr "vagas"
+
+#: rides/models.py:22
+msgid "price"
+msgstr "preço"
+
+#: rides/views.py:29
+msgid "Ride created successfully"
+msgstr "Carona criada com sucesso"
+
+#: rides/views.py:41
+msgid "Ride updated successfully"
+msgstr "Carona atualizada com sucesso"
+
+#: rides/views.py:52
+msgid "Ride deleted successfully"
+msgstr "Carona deletada com sucesso"
+
+#: templates/_navbar.html:35
+msgid "My Account"
+msgstr "Minha Conta"
+
+#: templates/_navbar.html:41
+msgid "Log out"
+msgstr "Sair"
+
+#: templates/_navbar.html:47
+msgid "Log in"
+msgstr "Entrar"
+
+#: templates/account/edit.html:7 templates/account/edit.html:34
+msgid "Edit Account"
+msgstr "Editar Conta"
+
+#: templates/account/login.html:7 templates/account/login.html:30
+msgid "Sign In"
+msgstr "Entrar"
+
+#: templates/account/login.html:38
+msgid "Forgot password?"
+msgstr "Esqueceu a senha?"
+
+#: templates/account/login.html:42
+msgid "Create new account"
+msgstr "Criar nova conta"
+
+#: templates/account/signup.html:7 templates/account/signup.html:34
+msgid "Sign Up"
+msgstr "Cadastro"
+
+#: templates/account/signup.html:40
+msgid "Already have a PiraUber account?"
+msgstr "Já tem uma conta PiraUber?"
+
+#: templates/home.html:32
+msgid ""
+"The carpooling application for the Piracanga Ecovillage. Free and Open "
+"Source."
+msgstr ""
+"O aplicativo de caronas para a Ecovila de Piracanga. Gratuito e Open Source."
+
+#: templates/home.html:37
+msgid "See current rides"
+msgstr "Ver caronas atuais"
+
+#: templates/home.html:42
+msgid "Sign up now"
+msgstr "Registre-se agora"
+
+#: templates/rides/ride_delete.html:6 templates/rides/ride_delete.html:27
+#: templates/rides/ride_list.html:125
+msgid "Delete Ride"
+msgstr "Deletar Carona"
+
+#: templates/rides/ride_delete.html:29 templates/rides/ride_list.html:131
+msgid "Are you sure you want to delete this ride?"
+msgstr "Você tem certeza que deseja deletar essa carona?"
+
+#: templates/rides/ride_delete.html:34 templates/rides/ride_list.html:82
+#: templates/rides/ride_list.html:135
+msgid "Delete"
+msgstr "Deletar"
+
+#: templates/rides/ride_edit.html:6 templates/rides/ride_edit.html:27
+msgid "Edit Ride"
+msgstr "Editar Carona"
+
+#: templates/rides/ride_list.html:27
+msgid "PiraUber Rides"
+msgstr "Caronas PiraUber"
+
+#: templates/rides/ride_list.html:29
+msgid "Check the available rides here."
+msgstr "Olhe as caronas disponíveis aqui."
+
+#: templates/rides/ride_list.html:34 templates/rides/ride_list.html:96
+msgid "Create Ride"
+msgstr "Criar Carona"
+
+#: templates/rides/ride_list.html:45
+msgid "No Time Defined"
+msgstr "Horário Não Definido"
+
+#: templates/rides/ride_list.html:51
+#, python-format
+msgid "%(amount)s seat"
+msgid_plural "%(amount)s seats"
+msgstr[0] "%(amount)s vaga"
+msgstr[1] "%(amount)s vagas"
+
+#: templates/rides/ride_list.html:75
+msgid "Edit"
+msgstr "Editar"
+
+#: templates/rides/ride_list.html:94
+msgid ""
+"There are no rides available right now. If you are a driver and want to "
+"offer one, create one below."
+msgstr ""
+"Não existem caronas disponíveis no momento. Se você é um motorista e quer "
+"oferecer uma carona, crie uma abaixo."
+
+#: templates/rides/ride_list.html:107
+msgid "Loading..."
+msgstr "Carregando..."
+
+#: templates/rides/ride_list.html:111
+msgid "More"
+msgstr "Mais"
+
+#: templates/rides/ride_list.html:134
+msgid "Close"
+msgstr "Fechar"
+
+#: templates/rides/ride_new.html:6 templates/rides/ride_new.html:27
+msgid "New Ride"
+msgstr "Nova Carona"
+
+#: users/admin.py:18
+msgid "User"
+msgstr "Usuário"
+
+#: users/admin.py:19
+msgid "Personal info"
+msgstr "Informações pessoais"
+
+#: users/admin.py:20
+msgid "Permissions"
+msgstr "Permissões"
+
+#: users/admin.py:23
+msgid "Important dates"
+msgstr "Datas importantes"
+
+#: users/apps.py:7
+msgid "Users"
+msgstr "Usuários"
+
+#: users/forms.py:53
+msgid "Save Account"
+msgstr "Salvar Conta"
+
+#: users/models.py:9
+msgid "Name"
+msgstr "Nome"
+
+#: users/views.py:18
+msgid "User updated successfully"
+msgstr "Usuário atualizado com sucesso"

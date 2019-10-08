@@ -33,9 +33,9 @@ class CustomLoginForm(LoginForm):
 
 
 class CustomSignupForm(SignupForm):
-    name = forms.CharField(max_length=150, widget=forms.TextInput(
+    name = forms.CharField(label=_('Full Name'), max_length=150, widget=forms.TextInput(
         attrs={'placeholder': _('Full Name'), 'autofocus': 'autofocus'}))
-    phone = PhoneNumberField(widget=IntlTelInputWidget(allow_dropdown=True,
+    phone = PhoneNumberField(label=_('Phone'), widget=IntlTelInputWidget(allow_dropdown=True,
                                                        preferred_countries=[
                                                            'br', 'us', 'es', 'ar'],
                                                        default_code='br'))

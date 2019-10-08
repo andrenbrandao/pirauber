@@ -26,7 +26,7 @@
                     <div class="text-center mt-5">
                         <h3>{% trans "PiraUber Rides" %}</h3>
                         <div class="h6 font-weight-300"><i
-                                class="ni location_pin mr-2"></i>{% trans "Check the available rides here!" %}</div>
+                                class="ni location_pin mr-2"></i>{% trans "Check the available rides here." %}</div>
                     </div>
 
                     {% if ride_list %}
@@ -48,12 +48,7 @@
 
                                     <div class='right-side-info'>
                                         <h5 class='d-flex align-items-center text-right text-primary'>
-                                            <i class="ni ni-user-run mr-2"></i>
-                                            {% blocktrans count amount=ride.seats %}
-                                            {{ amount }} seat
-                                            {% plural %}
-                                            {{ amount }} seats
-                                            {% endblocktrans %}
+                                            <i class="ni ni-user-run mr-2"></i>{% blocktrans count amount=ride.seats %}{{ amount }} seat{% plural %}{{ amount }} seats{% endblocktrans %}
                                         </h5>
 
                                         {% if ride.price %}
