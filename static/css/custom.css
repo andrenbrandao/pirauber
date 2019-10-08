@@ -41,6 +41,10 @@
   display: flex;
 }
 
+.copyright {
+  padding: 0.25rem 0.75rem;
+}
+
 @media (max-width: 767.98px) {
   .itinerary {
     display: block;
