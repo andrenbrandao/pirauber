@@ -32,6 +32,9 @@
                 <ul class="navbar-nav align-items-lg-center ml-lg-auto">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
+                        <a href="{% url 'account_edit' %}" class="nav-link">{% trans 'My Account' %}</a>
+                    </li>
+                    <li class="nav-item">
                         <form action="{% url 'account_logout' %}" method='post'>
                             {% csrf_token %}
                             <button type="submit" class='btn btn-link nav-link'
