@@ -15,7 +15,7 @@ class RideForm(forms.ModelForm):
     time = forms.TimeField(
         required=False,
         input_formats=['%H:%M'],
-        widget=forms.DateInput(attrs={
+        widget=forms.TimeInput(attrs={
             'class': 'form-control input-group-alternative',
             'type': 'time'
         })
