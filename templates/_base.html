@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en-us">
+{% load i18n %}
+<html lang="pt-br">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>{% block title %}{% endblock title %}{% block title_suffix %}| PiraUber{% endblock title_suffix %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description"
+    content="{% trans 'The carpooling application for the Piracanga Ecovillage. Free and Open Source.' %}">
   <meta name="author" content="André Nogueira Brandão">
-
+  <meta name="keywords" content="pirauber,carpooling">
   <link rel="icon" href="{% static 'img/brand/favicon.ico' %}">
+
+  <!-- OpenGraph-->
+  <meta property="og:title" content="PiraUber" />
+  <meta property="og:description" content="{% trans 'The carpooling application for the Piracanga Ecovillage. Free and Open Source.' %}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{% url 'home' %}" />
+  <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+  <meta property="og:image" content="{% static 'img/brand/cover.jpg' %}" />
 
   {% block css %}
 
@@ -20,6 +30,7 @@
   <!-- Icons -->
   <link href="{% static 'argon/vendor/nucleo/css/nucleo.css' %}" rel="stylesheet">
   <link href="{% static 'argon/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+
   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
   <link href="{% static 'css/toastify.min.css' %}" rel="stylesheet">
 
@@ -67,20 +78,20 @@
   <script src="{% static 'js/toastify.min.js' %}"></script>
 
   {% if messages %}
-  <script>
-    {% for message in messages %}
-    Toastify({
-      text: "{{message}}",
-      duration: 3000,
-      close: false,
-      gravity: "top", // `top` or `bottom`
-      position: "right", // `left`, `center` or `right`
-      backgroundColor: "#5e72e4",
-      stopOnFocus: true, // Prevents dismissing of toast on hover
-      onClick: function () {} // Callback after click
-    }).showToast();
-    {% endfor %}
-  </script>
+    <script>
+      {% for message in messages %}
+        Toastify({
+          text: "{{message}}",
+          duration: 3000,
+          close: false,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          backgroundColor: "#5e72e4",
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          onClick: function () {} // Callback after click
+        }).showToast();
+      {% endfor %}
+    </script>
   {% endif %}
 
   {% endblock javascript %}
