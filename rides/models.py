@@ -16,7 +16,7 @@ class Ride(models.Model):
     origin = models.CharField(_("origin"), max_length=150)
     destination = models.CharField(_("destination"), max_length=150)
     description = models.CharField(
-        _("description"), max_length=255, blank=True)
+        _("description"), max_length=1024, blank=True)
     seats = models.IntegerField(_("seats"))
     price = models.DecimalField(
         _("price"), max_digits=5, decimal_places=2, blank=True, null=True)
