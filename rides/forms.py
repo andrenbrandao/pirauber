@@ -10,7 +10,7 @@ from .models import Ride
 class RideForm(forms.ModelForm):
     date = forms.DateField(
         label=_('Date'),
-        widget=forms.DateInput(attrs={
+        widget=forms.DateInput(format=('%Y-%m-%d'),attrs={
             'class': 'form-control input-group-alternative',
             'type': 'date'
         })
@@ -19,7 +19,7 @@ class RideForm(forms.ModelForm):
         label=_('Time'),
         required=False,
         input_formats=['%H:%M'],
-        widget=forms.TimeInput(attrs={
+        widget=forms.TimeInput(format=('%H:%M'), attrs={
             'class': 'form-control input-group-alternative',
             'type': 'time'
         })
