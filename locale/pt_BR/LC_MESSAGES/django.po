@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-08 13:54-0300\n"
+"POT-Creation-Date: 2019-10-11 10:33-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,7 +50,16 @@ msgstr "Data"
 msgid "Time"
 msgstr "Hora"
 
-#: rides/forms.py:37
+#: rides/forms.py:28
+#| msgid "description"
+msgid "Description"
+msgstr "Descrição"
+
+#: rides/forms.py:30
+msgid "Write here any additional information."
+msgstr "Escreva aqui qualquer informação adicional."
+
+#: rides/forms.py:45
 msgid "Save Ride"
 msgstr "Salvar Carona"
 
@@ -106,6 +115,13 @@ msgstr "Carona atualizada com sucesso"
 msgid "Ride deleted successfully"
 msgstr "Carona deletada com sucesso"
 
+#: templates/_base.html:12 templates/_base.html:19 templates/home.html:32
+msgid ""
+"The carpooling application for the Piracanga Ecovillage. Free and Open "
+"Source."
+msgstr ""
+"O aplicativo de caronas para a Ecovila de Piracanga. Gratuito e Open Source."
+
 #: templates/_navbar.html:35
 msgid "My Account"
 msgstr "Minha Conta"
@@ -127,10 +143,6 @@ msgid "Sign In"
 msgstr "Entrar"
 
 #: templates/account/login.html:38
-msgid "Forgot password?"
-msgstr "Esqueceu a senha?"
-
-#: templates/account/login.html:42
 msgid "Create new account"
 msgstr "Criar nova conta"
 
@@ -142,12 +154,9 @@ msgstr "Cadastro"
 msgid "Already have a PiraUber account?"
 msgstr "Já tem uma conta PiraUber?"
 
-#: templates/home.html:32
-msgid ""
-"The carpooling application for the Piracanga Ecovillage. Free and Open "
-"Source."
-msgstr ""
-"O aplicativo de caronas para a Ecovila de Piracanga. Gratuito e Open Source."
+#: templates/bootstrap4/field.html:16 templates/bootstrap4/field.html:32
+msgid "(optional)"
+msgstr "(opcional)"
 
 #: templates/home.html:37
 msgid "See current rides"
@@ -257,3 +266,6 @@ msgstr "Nome"
 #: users/views.py:18
 msgid "User updated successfully"
 msgstr "Usuário atualizado com sucesso"
+
+#~ msgid "Forgot password?"
+#~ msgstr "Esqueceu a senha?"
