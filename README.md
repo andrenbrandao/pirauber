@@ -1,8 +1,8 @@
 <h1 align="center">PiraUber  🚘🌴</h1>
 
-<p align="center">
+<blockquote align="center">
   <strong>The carpooling application for the Piracanga Ecovillage.</strong>
-</p>
+</blockquote>
 
 <p align="center">
 	<strong>
@@ -33,7 +33,10 @@ A few of the things you can do with PiraUber:
 
 **New features will be added with feedback from the community**
 
-![pirauber](pages.png)
+<p align="center">
+  <img alt="Pages" title="Pages" src="./pages.png" width="600px" />
+</p>
+
 
 ## Feedback
 
