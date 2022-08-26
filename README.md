@@ -4,13 +4,6 @@
   <strong>The carpooling application for the Piracanga Ecovillage.</strong>
 </blockquote>
 
-<p align="center">
-	<strong>
-		<a href="https://pirauber.herokuapp.com/">Website</a>
-	</strong>
-</p>
-
-
 ![pirauber](laptop.png)
 
 
